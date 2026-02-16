@@ -1,0 +1,9 @@
+Inception_subject.pdf
+Inception_Evaluation_Form.pdf
+Inception_Evaluation_Form_2.pdf
+
+-- VSCode files --
+.vscode/*
+
+-- output files --
+*.o
