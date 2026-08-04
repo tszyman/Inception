@@ -7,3 +7,6 @@ Inception_Evaluation_Form_2.pdf
 
 -- output files --
 *.o
+secrets/db_password.txt
+secrets/db_root_password.txt
+secrets/wp_admin_passsword.txt
