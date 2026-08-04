@@ -13,3 +13,7 @@ installation, and/or execution._
 # Resources
 
 _Section listing classic references related to the topic (documentation, articles, tutorials, etc.), as well as a description of how AI was used — specifying for which tasks and which parts of the project._
+
+## AI usage
+
+AI has been used to clarify the goals of the project as well as to explain several issues regarding configuration.
