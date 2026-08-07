@@ -1,20 +1,35 @@
-all:
-	docker compose -f srcs/docker-compose.yml up --build -d
+NAME = inception
+COMPOSE = docker compose -f srcs/docker-compose.yml
+USER_LOGIN = tomas
+DATA_PATH = /home/$(USER_LOGIN)/data
 
-build:
-	docker compose -f srcs/docker-compose.yml build
+all: up
 
 up:
-	docker compose -f srcs/docker-compose.yml up -d
+	$(COMPOSE) up -d --build
 
 down:
-	docker compose -f srcs/docker-compose.yml down
+	$(COMPOSE) down
+
+start:
+	$(COMPOSE) start
+
+stop:
+	$(COMPOSE) stop
+
+create_dirs:
+	@mkdir -p $(DATA_PATH)/mariadb
+	@mkdir -p $(DATA_PATH)/wordpress
 
 clean:
-	docker compose -f srcs/docker-compose.yml down
+	$(COMPOSE) down -v --rmi all
 
 fclean:
-	docker compose -f srcs/docker-compose.yml down -v
-	docker system prune -af
+	clean
+	@docker system prune -a --volumes -f
+	@sudo rm -rf $(DATA_PATH)/mariadb
+	@sudo rm -rf $(DATA_PATH)/wordpress
 
 re: fclean all
+
+.PHONY: all up down start stop creat_dirs clean fclean re
