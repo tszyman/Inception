@@ -17,3 +17,19 @@ _Section listing classic references related to the topic (documentation, article
 ## AI usage
 
 AI has been used to clarify the goals of the project as well as to explain several issues regarding configuration.
+
+## Project description
+
+## Docker and included sources explanation
+
+## Main design choices
+
+## Comparisons
+
+### Virtual Machines vs Docker
+
+### Secrets vs Environment Variables
+
+### Docker Network vs Host Network
+
+### Docker Volumes vs Bind Mounts
