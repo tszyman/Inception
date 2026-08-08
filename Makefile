@@ -5,7 +5,7 @@ DATA_PATH = /home/$(USER_LOGIN)/data
 
 all: up
 
-up:
+up: create_dirs
 	$(COMPOSE) up -d --build
 
 down:
@@ -24,8 +24,7 @@ create_dirs:
 clean:
 	$(COMPOSE) down -v --rmi all
 
-fclean:
-	clean
+fclean: clean
 	@docker system prune -a --volumes -f
 	@sudo rm -rf $(DATA_PATH)/mariadb
 	@sudo rm -rf $(DATA_PATH)/wordpress
