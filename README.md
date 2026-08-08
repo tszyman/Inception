@@ -10,6 +10,24 @@ brief overview._
 _Section containing any relevant information about compilation,
 installation, and/or execution._
 
+Makefile
+
+Command to know:
+
+`make` builds and launches the project.
+`make down` stops containers.
+`make clean` stops the stack safely.
+`make fclean` removes containers, volumes, and images if required.
+`make re` rebuilds everything from scratch.
+
+MariaDB
+Commands to know:
+
+```bash
+docker logs mariadb
+docker exec -it mariadb mariadb -u root -p
+```
+
 # Resources
 
 _Section listing classic references related to the topic (documentation, articles, tutorials, etc.), as well as a description of how AI was used — specifying for which tasks and which parts of the project._
