@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-MYSQL_PASSWORD=$(cat /run/secrets/db_password.txt);
-WP_ADMIN_PASSWORD=$(cat /run/secrets/wp_admin_password.txt);
+MYSQL_PASSWORD=$(cat /run/secrets/db_password);
+WP_ADMIN_PASSWORD=$(cat /run/secrets/wp_admin_password);
 
 cd /var/www/html
 
@@ -22,26 +22,26 @@ if [ ! -f wp-config.php ]; then
 		--dbname="${MYSQL_DATABASE}" \
 		--dbuser="${MYSQL_USER}" \
 		--dbpass="${MYSQL_PASSWORD}" \
-		--dbhost="mariadb:3306: \
+		--dbhost="mariadb:3306" \
 		--allow-root
 
 	echo "Installing WordPress core..."
 	wp core install \
-		--url="https://${DOMAIN_NAME} \
+		--url="https://${DOMAIN_NAME}" \
 		--title="${WP_TITLE}" \
 		--admin_user="${WP_ADMIN_USER}" \
 		--admin_password= "${WP_ADMIN_PASSWORD}" \
 		--admin_email= "${WP_ADMIN_EMAIL}" \
 		--skip_email \
-		--allow_root
+		--allow-root
 
 	echo "Creating second WordPress user..."
 	wp user create \
 		"${WP_USER}" \
-		"${WP_USER_EMAIL} \
+		"${WP_USER_EMAIL}" \
 		--role=author \
 		--user_pass="UserPass42!" \
-		--allow_root
+		--allow-root
 	
 	chown -R www-data:www-data /var/www/html
 	echo "WordPress initialization complete."

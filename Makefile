@@ -18,16 +18,15 @@ stop:
 	$(COMPOSE) stop
 
 create_dirs:
-	@mkdir -p $(DATA_PATH)/mariadb
-	@mkdir -p $(DATA_PATH)/wordpress
+	@mkdir -p $(DATA_PATH)/mariadb $(DATA_PATH)/wordpress 2>/dev/null || (sudo mkdir -p $(DATA_PATH)/mariadb $(DATA_PATH)/wordpress && sudo chmod -R 777 $(DATA_PATH))
 
 clean:
 	$(COMPOSE) down -v --rmi all
 
 fclean: clean
 	@docker system prune -a --volumes -f
-	@sudo rm -rf $(DATA_PATH)/mariadb
-	@sudo rm -rf $(DATA_PATH)/wordpress
+	@sudo rm -rf $(DATA_PATH)/mariadb/* 2>/dev/null || true
+	@sudo rm -rf $(DATA_PATH)/wordpress/* 2>/dev/null || true
 
 re: fclean all
 
