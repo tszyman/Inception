@@ -30,9 +30,9 @@ if [ ! -f wp-config.php ]; then
 		--url="https://${DOMAIN_NAME}" \
 		--title="${WP_TITLE}" \
 		--admin_user="${WP_ADMIN_USER}" \
-		--admin_password= "${WP_ADMIN_PASSWORD}" \
-		--admin_email= "${WP_ADMIN_EMAIL}" \
-		--skip_email \
+		--admin_password="${WP_ADMIN_PASSWORD}" \
+		--admin_email="${WP_ADMIN_EMAIL}" \
+		--skip-email \
 		--allow-root
 
 	echo "Creating second WordPress user..."
