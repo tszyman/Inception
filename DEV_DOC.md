@@ -60,6 +60,8 @@ make fclean
 
   ```bash
   docker compose -f srcs/docker-compose.yml logs -f [nginx|wordpress|mariadb]
+
+  docker logs [mariadb|wordpress|nginx]
   ```
 
 - **Interactive Shell in Container:**

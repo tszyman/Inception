@@ -46,7 +46,7 @@ Other useful make commands:
 - **Main Website:** Open your web browser and navigate to `https://tszymans.42.fr`
 - **WordPress Admin Dashboard:** Open `https://tszymans.42.fr/wp-admin`
 
-*Note: Since the website uses a self-signed SSL certificate, your browser will display a security warning. On Google Chrome/Edge, click anywhere on the warning page and type `thisisunsafe` to proceed.*
+*Note: Since the website uses a self-signed SSL certificate, your browser will display a security warning.*
 
 ---
 
@@ -158,7 +158,7 @@ curl -k https://<login>.42.fr
 - [x]  NGINX forwards PHP requests to WordPress.
 - [x]  NGINX is the only public entry point.
 
-## Feature & Service Verification Tests
+## More Feature & Service Verification Tests
 
 The following tests verify that all project requirements function correctly and comply with the evaluation checklist.
 
