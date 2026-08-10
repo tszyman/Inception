@@ -1,6 +1,6 @@
 NAME = inception
 COMPOSE = docker compose -f srcs/docker-compose.yml
-USER_LOGIN ?= tomas
+USER_LOGIN ?= tszymans
 DATA_PATH = /home/$(USER_LOGIN)/data
 
 all: up
