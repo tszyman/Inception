@@ -144,7 +144,7 @@ docker exec -it wordpress sh
 docker compose -f srcs/docker-compose.yml build nginx
 docker compose -f srcs/docker-compose.yml up nginx
 docker logs nginx
-curl -k https://<login>.42.fr
+curl -k https://tszymans.42.fr
 ```
 
 #### NGINX Tests
